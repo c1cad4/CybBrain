@@ -78,7 +78,9 @@ mod tests {
     #[test]
     fn appends_and_retrieves_records() {
         let mut memory = Memory::default();
-        let id = memory.append("agent-1", "experiment-1", "Bees forage").unwrap();
+        let id = memory
+            .append("agent-1", "experiment-1", "Bees forage")
+            .unwrap();
         assert_eq!(memory.get(id).unwrap().source, "experiment-1");
         assert_eq!(memory.len(), 1);
     }
